@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
+	xmlns:java="http://www.mulesoft.org/schema/mule/java"
+	xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd 
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="76caa6d9-7601-4a13-a7d8-097084239f70" basePath="/api" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<flow name="firstprojectFlow" doc:id="a82e7350-8fcc-48dc-9470-14ce469e4ed9" >
+		<http:listener doc:name="Listener" doc:id="9025988b-2aa4-4e3e-9bf2-3801fb0aca9b" config-ref="HTTP_Listener_config" path="/Hello" allowedMethods="GET">
+			<http:response statusCode="200" reasonPhrase="sucesfull"/>
+			<http:error-response >
+				<http:body ><![CDATA[#[payload]]]></http:body>
+			</http:error-response>
+		</http:listener>
+		<logger level="INFO" doc:name="Logger" doc:id="4306a4c0-d427-4444-916c-e3ac7901f6e3" message="Received request  and value of ID #[attributes.queryParams.ID]"/>
+		<choice doc:name="Choice" doc:id="afae1874-788d-4a3c-a6fc-d67ab80e8d1b" tracking:enable-default-events="true">
+			<when expression="#[attributes.queryParams.ID== 'getAmerican']" >
+				<set-payload value="got American Flights" doc:name="Set Payload" doc:id="3a3ae557-700e-4f25-ba7b-58d7da16326d" />
+			</when>
+			<when expression="#[attributes.queryParams.ID== 'getDelta']" >
+				<flow-ref doc:name="Flow Reference" doc:id="ba65d6b3-8ebf-4948-8608-efc12a07a7ac" name="deltaflightsSub" target="payload" targetValue="#[payload]"/>
+			</when>
+			<otherwise >
+				<set-payload value="Test Connection Established" doc:name="Set Payload" doc:id="8a931d3c-87e6-442f-9f20-4fd98d65ab66" />
+			</otherwise>
+		</choice>
+	</flow>
+	<sub-flow name="deltaflightsSub" doc:id="34585d4c-7a34-4c0f-b1ea-dc162391a870" >
+		<try doc:name="Try" doc:id="36df9e96-73bf-4df7-b7b7-cf7f9d8fb430" >
+			<scripting:execute doc:name="Execute" doc:id="489d200f-cca4-4746-a733-4ea79047b126" engine="groovy">
+				<error-mapping targetType="APP:ANY" />
+				<scripting:code >throw new Exception(&amp;quot;getDelta SOAP Error&amp;quot;);</scripting:code>
+			</scripting:execute>
+			<error-handler>
+				<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="85855cd5-63ef-4cea-96e4-11e5555d1da0" type="APP:ANY">
+					<logger level="INFO" doc:name="Logger" doc:id="4cd99be2-c33e-44d0-b3a9-1b5dbaadf7a1" message="Insider Error on Propagate"/>
+					<ee:transform doc:name="Transform Message" doc:id="318e8fb3-f56e-4827-a19d-ff2fa017a6e1">
+						<ee:message>
+							<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+	Error:'Exception while getting the DeltaFlights'
+}]]></ee:set-payload>
+						</ee:message>
+					</ee:transform>
+				</on-error-propagate>
+				<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="36866248-a861-4aae-9f51-3e758873f7a1" type="STREAM_MAXIMUM_SIZE_EXCEEDED">
+					<logger level="INFO" doc:name="Copy_of_Logger" doc:id="1d8aef4c-cfdd-46d3-ba4c-94f250a7c3c4" message="Insider Error on Continue" />
+					<set-payload value="#[ {
+		Error: 'Error while Getting Delta FLights On Error Continue'
+	}]
+		" doc:name="Set Payload" doc:id="d1d8221e-27ba-46d3-828b-740f07971178" mimeType="application/json" />
+				</on-error-continue>
+			</error-handler>
+		</try>
+	
+</sub-flow>
+</mule>
