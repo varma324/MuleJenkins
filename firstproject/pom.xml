@@ -29,7 +29,7 @@
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${app.runtime}</muleVersion>
 						<username>nareshMl324</username>
-						<password>Plmokn123$</password>
+						<password>Password123$</password>
 						<applicationName>FirstJenkins</applicationName>
 						<environment>Sandbox</environment>
 						<workerType>MICRO</workerType>
