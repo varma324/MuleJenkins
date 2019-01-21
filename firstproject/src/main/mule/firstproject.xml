@@ -9,6 +9,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="76caa6d9-7601-4a13-a7d8-097084239f70" basePath="/api" >
 		<http:listener-connection host="0.0.0.0" port="${http.port}" />
 	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="6b9814c4-45cd-4ff7-aedc-af4ceeb338ff" file="app.properties" />
 	<flow name="firstprojectFlow" doc:id="a82e7350-8fcc-48dc-9470-14ce469e4ed9" >
 		<http:listener doc:name="Listener" doc:id="9025988b-2aa4-4e3e-9bf2-3801fb0aca9b" config-ref="HTTP_Listener_config" path="/Hello" allowedMethods="GET">
 			<http:response statusCode="200" reasonPhrase="sucesfull"/>
