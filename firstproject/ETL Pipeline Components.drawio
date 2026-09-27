@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="Gk2RloreiExP1bl8pqlY">
+    <mxGraphModel dx="1245" dy="694" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-4" edge="1" parent="1" source="-uyVpuVUkqLQgp1vduA4-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="-uyVpuVUkqLQgp1vduA4-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Requirement request" vertex="1">
+          <mxGeometry height="60" width="120" x="80" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-6" edge="1" parent="1" source="-uyVpuVUkqLQgp1vduA4-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="-uyVpuVUkqLQgp1vduA4-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Data Architecture design and mapping analysis" vertex="1">
+          <mxGeometry height="60" width="120" x="330" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Type of Requirements: new or enhancement&lt;div&gt;&lt;b&gt;Ingestion (&lt;/b&gt;new: Type of ingestions supported (File/Kafka/Lakebase/https API Pull), databricks delta table&lt;/div&gt;&lt;div&gt;&lt;b&gt;ETL Pipeline:&amp;nbsp; &lt;/b&gt;Medallion Progression of data from Silver, gold, diamond&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Zone level requirements:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Silver:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Diamond: &lt;/b&gt;Domain level aggregate tables, metric views, specs, view build&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Consumption layer: &lt;/b&gt;build of powerBI Reports/consumption layer builds/&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Inputs&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;PR Request inputs:&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;specs from the source team on the model, definitions, requirements template details&lt;/div&gt;&lt;div&gt;Specs of API Swagger files of the definition details.&lt;/div&gt;&lt;div&gt;Kafka schema: Json examples&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Additional details:&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Volume of the data, nature of the data set, business logic high level&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="210" x="50" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-8" edge="1" parent="1" source="-uyVpuVUkqLQgp1vduA4-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="-uyVpuVUkqLQgp1vduA4-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Dev Build/Unit testing" vertex="1">
+          <mxGeometry height="60" width="120" x="495" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-10" edge="1" parent="1" source="-uyVpuVUkqLQgp1vduA4-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="-uyVpuVUkqLQgp1vduA4-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="QA" vertex="1">
+          <mxGeometry height="60" width="120" x="680" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Deployment to prod" vertex="1">
+          <mxGeometry height="60" width="120" x="850" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;b&gt;ETL Design:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Orchestrations allowed&lt;/div&gt;&lt;div&gt;&amp;nbsp;Airflow level execution of pyspark code&lt;/div&gt;&lt;div&gt;DLT and workflow level code for lakebase flows&lt;/div&gt;&lt;div&gt;Diamond layer Consumption tables:&lt;/div&gt;&lt;div&gt;Fact and dimensions, metrics views&lt;/div&gt;&lt;div&gt;Design Templates with skills&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="250" x="40" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Design" vertex="1">
+          <mxGeometry height="60" width="120" x="30" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Model" vertex="1">
+          <mxGeometry height="60" width="120" x="320" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Test Data generation of ETL pipeline testing/Execution" vertex="1">
+          <mxGeometry height="60" width="120" x="620" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Metadata capture Runtime design/time" vertex="1">
+          <mxGeometry height="60" width="120" x="880" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Constrains" vertex="1">
+          <mxGeometry height="60" width="120" x="1060" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Requirements&lt;div&gt;Medallion architecture&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="130" x="40" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Unit testing:&lt;div&gt;Sample Data testing:&lt;/div&gt;&lt;div&gt;Create business driven use-cases for regression testing&lt;br&gt;End to End: Re-gression testing parallel pipelines&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Execute the pipelines and test the pipeline with edge cases to make sure pipeline is not broken and key metrics are matching&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="620" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="-uyVpuVUkqLQgp1vduA4-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;b&gt;ETL Design:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Orchestrations allowed&lt;/div&gt;&lt;div&gt;&amp;nbsp;Airflow level execution of pyspark code&lt;/div&gt;&lt;div&gt;DLT and workflow level code for lakebase flows&lt;/div&gt;&lt;div&gt;Diamond layer Consumption tables:&lt;/div&gt;&lt;div&gt;Fact and dimensions, metrics views&lt;/div&gt;&lt;div&gt;Design Templates with skills&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="250" x="320" y="830" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
